@@ -1,0 +1,5 @@
+ofxPiMapper
+ofxIO
+ofxXmlSettings
+ofxGui
+ofxRPiCameraVideoGrabber
