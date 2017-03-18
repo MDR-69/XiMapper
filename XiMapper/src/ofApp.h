@@ -79,5 +79,4 @@ class ofApp : public ofBaseApp {
         char		incomingCmdMsg[4];          // data transmitted by the RF microcontroller
         int			nBytesRead;					// how much did we read?
         int			nTimesRead;					// how many times did we read?
-
 };

@@ -145,7 +145,6 @@ vector <string> MediaServer::getVideoNames(){
 }
 
 BaseSource * MediaServer::loadMedia(string & path, int mediaType, ofLoopType loopType){
-    cout << "loadMedia --- \n";
 	// Chose load method depending on type
 	if(mediaType == SourceType::SOURCE_TYPE_IMAGE){
 		return loadImage(path);

@@ -7,9 +7,12 @@ void ofApp::setup(){
     vector <ofSerialDeviceInfo> deviceList = serial.getDeviceList();
     
     int baud = 115200;
-    //serial.setup(0, baud); //open the first device
+    #ifdef TARGET_RASPBERRY_PI
+    serial.setup(0, baud); //open the first device
+    #else
     serial.setup("/dev/tty.usbmodem1868531", baud); // mac osx example
-
+    #endif
+    
 	// Enable or disable audio for video sources globally
 	// Set this to false to save resources on the Raspberry Pi
 	ofx::piMapper::VideoSource::enableAudio = false;
@@ -22,7 +25,8 @@ void ofApp::setup(){
 	// The info layer is hidden by default, press <i> to toggle
 	// piMapper.showInfo();
 	
-	ofSetFullscreen(Settings::instance()->getFullscreen());
+    ofSetFullscreen(Settings::instance()->getFullscreen());
+    
 }
 
 void ofApp::update(){

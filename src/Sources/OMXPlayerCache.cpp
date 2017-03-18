@@ -40,7 +40,7 @@ void OMXPlayerCache::unload(string moviePath){
 	}
 }
     
-void restartMovie(string moviePath) {
+void OMXPlayerCache::restartMovie(string moviePath) {
     _players[moviePath]->restartMovie();    
 }
 
